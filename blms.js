@@ -1,5 +1,5 @@
 var blms_debug = true;
-var e = element.getElementsByTagName('html');
+var e = document.getElementsByTagName('html');
 if (e.length == 1) {
   if ((blms_location() && blms_date()) || blms_is_forced()) {
     e[0].setAttribute("style", "-moz-filter: grayscale(100%); -webkit-filter: grayscale(100%); filter: gray; filter: grayscale(100%);");
