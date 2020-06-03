@@ -1,0 +1,91 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family:  'Archivo Black' ,san-serif;
+}
+
+code {
+	padding:10px
+}
+
+li {
+	margin-bottom: 25px
+}
+a {
+	color: #000;
+	text-decoration: none;
+	border-bottom:2px dotted #000
+}
+
+.section {
+    text-align: center;
+}
+
+#blms-logo {
+	width:50%;height:50%;
+}
+.intro {
+	background: url(../images/support-black-lives-matter-bg.jpg);
+	color: #fff;
+	padding:80px 0;
+}
+
+.story {
+	font-size: 2rem;
+	text-align: left;
+}
+
+.quote {
+	background: #000;
+	color: #fff;
+}
+
+.quote, .story, .how, .code, .share, .howcode {
+	padding:50px 0;
+}
+
+.how {
+	font-size: 2rem;
+	text-align: left;
+}
+
+.blockquote {
+	font-style: italic;
+	font-size: 4rem;
+}
+
+.share {
+	background: #000;
+	color: #fff;
+}
+
+.howcode {
+	background: linear-gradient(black, black), url(../images/code.jpg);
+	color: #fff;
+	text-align:left;
+	font-size:3.5rem;
+	font-family: 'Archivo Black', sans-serif;
+}
+
+.code {
+	text-align:left;
+}
+
+.outro {
+	padding:25px 0 0 0;
+}
+
+.support {
+	margin-top:80px
+}
+
+.social-icons {
+	margin-top:30px
+}
+
+#blms_pop {
+	position:absolute;
+
+}

@@ -1,14 +1,17 @@
 var blms_debug = true;
-var e = document.getElementsByTagName('html');
-if (e.length == 1) {
-  if ((blms_location() && blms_date()) || blms_is_forced()) {
-    e[0].setAttribute("style", "-moz-filter: grayscale(100%); -webkit-filter: grayscale(100%); filter: gray; filter: grayscale(100%);");
-  }
-}
-else {
-  blms_debug ? console.log('No HTML tag') : '';
-}
 
+function blms_start() {
+	var e = document.getElementsByTagName('html');
+	if (e.length == 1) {
+	  if ((blms_location() && blms_date()) || blms_is_forced()) {
+		var s = e[0].getAttribute("style");
+		e[0].setAttribute("style", "-moz-filter: grayscale(100%); -webkit-filter: grayscale(100%); filter: gray; filter: grayscale(100%);" + s);
+	  }
+	}
+	else {
+	  blms_debug ? console.log('No HTML tag') : '';
+	}
+}
 
 function blms_location() {
   if (typeof force_blms !== 'undefined' && force_blms) {
@@ -26,8 +29,8 @@ function blms_location() {
 
 function blms_date() {
   var d = new Date();
-  if (d.getMonth() == 5 && (d.getDate() == 11 || d.getDate() == 12)) {
-    blms_debug ? console.log('It is BLMS day!') : '';
+  if (d.getMonth() == 5 && (d.getDate() == 10 || d.getDate() == 11 || d.getDate() == 12)) {
+    blms_debug ? console.log('It is BLMS day.') : '';
     return true;
   }
   blms_debug ? console.log('Not BLMS day.') : '';
@@ -39,11 +42,14 @@ function blms_is_forced() {
   var vars = query.split("&");
   for (var i=0;i<vars.length;i++) {
     var pair = vars[i].split("=");
-    if(pair[0] == 'blms_force') {
-      blms_debug ? console.log('blms_force found in the URL') : '';
+    if(pair[0] == 'blms_simulation') {
+      blms_debug ? console.log('blms_simulation found in the URL') : '';
       return true;
     }
   }
-  blms_debug ? console.log('blms_force not found in the URL') : '';
+  blms_debug ? console.log('blms_simulation not found in the URL') : '';
   return false;
 }
+
+blms_start();
+
