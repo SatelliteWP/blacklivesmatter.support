@@ -27,9 +27,15 @@ h4 {
     text-align: center;
 }
 
+.overheader {
+	text-align: right;
+	margin-bottom: 40px;
+	padding:5px 0;
+}
 #blms-logo {
 	width:50%;height:50%;
 }
+
 .intro {
 	background: url(../images/support-black-lives-matter-bg.jpg);
 	color: #fff;
