@@ -68,7 +68,7 @@ function blms_badge() {
 
 	var p = document.createElement('div');
 	p.setAttribute('data-style', 'bottomright');
-	p.setAttribute('style', 'width: 85px; height: 85px; display: block; position: fixed; bottom: 200px; right: 0; box-shadow: gray 0px 0px 5px; border-radius: 5px; overflow: hidden;z-index:99999; -moz-filter: none; -webkit-filter: none; filter: none;');
+	p.setAttribute('style', 'width: 85px; height: 85px; display: block; position: fixed; bottom: 200px; right: 0; box-shadow: gray 0px 0px 5px; border-radius: 5px 0 0 5px; overflow: hidden;z-index:99999; -moz-filter: none; -webkit-filter: none; filter: none;');
 	p.appendChild(s);
 
 	document.body.appendChild(p);
