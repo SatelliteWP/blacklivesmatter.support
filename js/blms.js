@@ -4,8 +4,9 @@ function blms_start() {
 	var e = document.getElementsByTagName('html');
 	if (e.length == 1) {
 	  if ((blms_location() && blms_date()) || blms_is_forced()) {
-		var s = e[0].getAttribute("style");
-		e[0].setAttribute("style", "-moz-filter: grayscale(100%); -webkit-filter: grayscale(100%); filter: gray; filter: grayscale(100%);" + s);
+      var s = e[0].getAttribute("style");
+      e[0].setAttribute("style", "-moz-filter: grayscale(100%); -webkit-filter: grayscale(100%); filter: gray; filter: grayscale(100%);" + s);
+      blms_badge();
 	  }
 	}
 	else {
@@ -51,5 +52,34 @@ function blms_is_forced() {
   return false;
 }
 
+function blms_badge() {
+  var i = document.createElement('iframe');
+  i.setAttribute('src', 'https://blacklivesmatter.support/iframe.html');
+  i.setAttribute('width', '85');
+  i.setAttribute('height', '85');
+  i.setAttribute('role', 'presentation');
+  i.setAttribute('width', '85');
+  i.setAttribute('frameborder', '0');
+  i.setAttribute('scrolling', 'no');
+  i.setAttribute('sandbox', 'allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox');
+
+  var s = document.createElement('div');
+  s.appendChild(i);
+
+  var p = document.createElement('div');
+  e.setAttribute('data-style', 'bottomright');
+  e.setAttribute('style', 'width: 85px; height: 85px; display: block; position: fixed; bottom: 200px; right: 0; box-shadow: gray 0px 0px 5px; border-radius: 5px; overflow: hidden;');
+  e.appendChild(s);
+
+  document.body.appendChild(p);
+}
+
 blms_start();
 
+/*
+<div class="blms-badge" data-style="bottomright" style="width: 85px; height: 85px; display: block; position: fixed; bottom: 200px; right: 0; box-shadow: gray 0px 0px 5px; border-radius: 5px; overflow: hidden;">
+<div class="blms-logo">
+  <iframe src="iframe.html" width="85" height="85" role="presentation" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe>
+</div>
+</div>
+*/

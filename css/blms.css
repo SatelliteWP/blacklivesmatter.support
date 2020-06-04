@@ -8,7 +8,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .codestyle {
 	padding:10px;
-	overflow: scroll;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	border: 1px solid #e1e1e1;
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	word-wrap: none;
 }
 
 li {
@@ -92,7 +97,7 @@ h4 {
 	margin-top:80px
 }
 
-.social-icons {
+.social {
 	margin-top:30px
 }
 
