@@ -16,7 +16,7 @@ function blms_start() {
 
 function blms_location() {
 	if (typeof blms_force !== 'undefined' && blms_force) {
-		blms_debug ? console.log('Variable force_blms set to true.') : '';
+		blms_debug ? console.log('Variable blms_force set to true.') : '';
 		return true;
 	}
 	else {
