@@ -162,8 +162,41 @@ Peace.
 			<p>Then, from your WordPress Dashboard, access the <strong>Plugins > Add New</strong> menu. Install the plugin and activate it!</p>
 
 			<h4>How can I validate that the code will work?</h4>
-			<p>Simply add <code>?blms_simulation</code> at the end of your website URL in your browser and you should see your colorless homepage!</p>
-			<p></p>
+			<p>Simply add <code>?blms_simulation</code> at the end of your website URL in your browser and you should see your colorless homepage! If your setup is correct, you should see a colorless page!</p>
+			
+			<h4>Can I have more control about the colorless location?</h4>
+			<p>Yes, you can! Many options are available. You can:</p>
+			<p>
+				Activate debugging :
+				<div class="codestyle">
+					&lt;script&gt;<br/>
+					&nbsp;&nbsp;// Activates debugging<br/>
+					&nbsp;&nbsp;var blms_debug = false;<br/>
+					&lt;/script&gt;<br/>
+				</div>
+			</p>
+			<p>
+				Force the current page to be colorless (this has to be done on each page) :
+				<div class="codestyle">
+					&lt;script&gt;<br/>
+					&nbsp;&nbsp;// Makes the current page colorless during the iniatiative<br />
+					&nbsp;&nbsp;// (has to be set manually on each pages)<br/>
+					&nbsp;&nbsp;var blms_force = false;<br/>
+					&lt;/script&gt;<br/>
+				</div>
+			</p>
+
+			<p>
+				Specify all pages and their language that you want to be colorless :
+				<div class="codestyle">
+					&lt;script&gt;<br/>
+					&nbsp;&nbsp;// Sets the URL and language in an object. Supported languages : fr, en.<br/>
+					&nbsp;&nbsp;var blms_pages = {'/' : 'en', '/fr/' : 'fr' };<br/>
+					&lt;/script&gt;<br/>
+				</div>
+
+				Note: The path (e.g. '/' has to be exactly as in the URL.)
+			</p>
 
 			<h4>Does it work on any website?</h4>
 			<p>It should. That being said, we are using the CSS filter instruction to convert your website to B&W. This may not work in every case. For instance, there are limitations in Microsoft Edge if you are using z-index. It is simply not supported in Internet Explorer 11! You may have to add more code to make your homepage 100% colorless.</p>
@@ -200,9 +233,9 @@ Peace.
 	</div>
 	<script>
 		var blms_debug = true;
-		var blms_force = true;
+		var blms_force = false;
 		var blms_pages = {'/' : 'en', '/fr/' : 'fr' };
 	</script>
-	<script defer src="js/blms-experimental.js"></script>
+	<script defer src="https://blacklivesmatter.support/js/blms-experimental.js"></script>
 </body>
 </html>

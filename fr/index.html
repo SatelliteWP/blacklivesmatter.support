@@ -159,6 +159,40 @@ Paix.
 			<h4>Comment puis-je valider que le code fonctionnera?</h4>
 			<p>Seulement à ajouter <code>?blms_simulation</code> à la fin de l'adresse de la page d'accueil de votre site dans votre navigateur et vous pourrez voir votre page d'accueil sans couleur!</p>
 
+			<h4>Est-ce possible d'avoir plus de contrôle sur l'intégration du mode sans couleur?</h4>
+			<p>Oui! Plusieurs options sont disponibles. Vous pouvez :</p>
+			<p>
+				Activate debugging :
+				<div class="codestyle">
+					&lt;script&gt;<br/>
+					&nbsp;&nbsp;// Activer le débogage<br/>
+					&nbsp;&nbsp;var blms_debug = false;<br/>
+					&lt;/script&gt;<br/>
+				</div>
+			</p>
+			<p>
+				Forcer la page actuelle à s'afficher sans couleur (le tout doit être fait manuellement sur chaque page) :
+				<div class="codestyle">
+					&lt;script&gt;<br/>
+					&nbsp;&nbsp;// Makes the current page colorless during the iniatiative<br />
+					&nbsp;&nbsp;// (has to be set manually on each pages)<br/>
+					&nbsp;&nbsp;var blms_force = false;<br/>
+					&lt;/script&gt;<br/>
+				</div>
+			</p>
+
+			<p>
+				Spécifier toutes les pages et leur langue que vous souhaitez afficher sans couleur :
+				<div class="codestyle">
+					&lt;script&gt;<br/>
+					&nbsp;&nbsp;// Sets the URL and language in an object. Supported languages : fr, en.<br/>
+					&nbsp;&nbsp;var blms_pages = {'/' : 'en', '/fr/' : 'fr' };<br/>
+					&lt;/script&gt;<br/>
+				</div>
+
+				Note: The path (e.g. '/' has to be exactly as in the URL.)
+			</p>
+
 			<h4>Est-ce que ça fonctionne sur tous les sites web?</h4>
 			<p>Ça devrait. Ceci étant dit, nous utilisons un filtre CSS pour convertir votre site au noir et blanc. Il est possible que ça ne fonctionne pas dans tous les cas. Par exemple, il existe certaines limitations avec Microsoft Edge si votre site utilise des z-index. Les filtres ne sont pas supportés sur Internet Explorer 11! Vous pourriez avoir à ajouter un peu de code pour que 100% des couleurs soient retirées de votre page d'accueil.</p>
 		</div>
@@ -194,7 +228,7 @@ Paix.
 	</div>
 	<script>
 		var blms_debug = true;
-		var blms_force = true;
+		var blms_force = false;
 		var blms_pages = {'/' : 'en', '/fr/' : 'fr' };
 	</script>
 	<script defer src="https://blacklivesmatter.support/js/blms-experimental.js"></script>
