@@ -1,4 +1,4 @@
-var blms_debug = true;
+var blms_debug = (typeof blms_debug === 'undefined') ? false : blms_debug;
 
 function blms_start() {
 	var e = document.getElementsByTagName('html');
@@ -15,9 +15,21 @@ function blms_start() {
 }
 
 function blms_location() {
-	if (typeof force_blms !== 'undefined' && force_blms) {
-		blms_debug ? console.log('Variable force_blms set to true.') : '';
+	if (typeof blms_force !== 'undefined' && blms_force) {
+		blms_debug ? console.log('Variable blms_force set to true.') : '';
 		return true;
+	}
+	else {
+		blms_debug ? console.log('Variable blms_force not set to true.') : '';
+	}
+
+	if (typeof blms_pages === 'object' && blms_pages !== null) {
+		for (let [key, value] of Object.entries(blms_pages)) {
+			if (key == window.location.pathname) {
+				blms_debug ? console.log('You are on a specified page from blms_page.') : '';
+				return true;
+			}
+		}
 	}
 
 	if ('/' == window.location.pathname) {
@@ -53,8 +65,35 @@ function blms_is_forced() {
 }
 
 function blms_badge() {
+	var lang = '';
+	
+	var blms_language = (typeof blms_language === 'undefined') ? null : blms_language;
+
+	if (blms_language != null) {
+		blms_debug ? console.log('blms_language is set on this page to: ' + blms_language) : '';
+	}
+	else {
+		blms_debug ? console.log('blms_language is not set on this page.') : '';
+	}
+
+	if (blms_language == null && typeof blms_pages === 'object' && blms_pages !== null) {
+		for (let [key, value] of Object.entries(blms_pages)) {
+			if (key == window.location.pathname) {
+				blms_debug ? console.log('Language for link will be: ' + value) : '';
+				blms_language = value;
+				break;
+			}
+		}
+		if (blms_language != null) {
+			lang = '?lang=' + blms_language;
+		}
+	}
+	else {
+		blms_debug ? console.log('blms_pages not found for language setting.') : '';
+	}
+	
 	var i = document.createElement('iframe');
-	i.setAttribute('src', 'https://blacklivesmatter.support/iframe.html');
+	i.setAttribute('src', 'https://blacklivesmatter.support/iframe.html'+lang);
 	i.setAttribute('width', '85');
 	i.setAttribute('height', '85');
 	i.setAttribute('role', 'presentation');
@@ -71,7 +110,13 @@ function blms_badge() {
 	p.setAttribute('style', 'width: 85px; height: 85px; display: block; position: fixed; bottom: 200px; right: 0; box-shadow: gray 0px 0px 5px; border-radius: 5px 0 0 5px; overflow: hidden;z-index:99999; -moz-filter: none; -webkit-filter: none; filter: none;');
 	p.appendChild(s);
 
-	document.body.appendChild(p);
+	if (document.body != null) {
+		document.body.appendChild(p);
+	}
+	else {
+		console.log('BlackLivesMatter.support script must be included inside the <body> tag');
+	}
+	
 }
 
 blms_start();
