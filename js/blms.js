@@ -42,7 +42,7 @@ function blms_location() {
 
 function blms_date() {
 	var d = new Date();
-	if (d.getMonth() == 5 && (d.getDate() == 10 || d.getDate() == 11 || d.getDate() == 12)) {
+	if (d.getMonth() == 4 && (d.getDate() == 23 || d.getDate() == 24 || d.getDate() == 25)) {
 		blms_debug ? console.log('It is BLMS day.') : '';
 		return true;
 	}
