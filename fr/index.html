@@ -174,19 +174,17 @@ Paix.
 			<h4>Est-ce possible d'avoir plus de contrôle sur l'intégration du mode sans couleur?</h4>
 			<p>Oui! Plusieurs options sont disponibles.</p>
 			
-			<p>Vous pouvez insérer les codes ci-dessous à l'intérieur d'une balise <code>&lt;script&gt; &lt;/script&gt;</code>. Placez ensuite l'ensemble juste avant le <a href="#blmsjsfile">code ci-dessus</a></p>
+			<p>Vous pouvez insérer les codes ci-dessous à l'intérieur d'une balise <code>&lt;script&gt;</code>. Placez ensuite l'ensemble juste avant le <a href="#blmsjsfile">code ci-dessus</a></p>
 			<p>
-				Pour activer le debogage :
+				Pour activer le débogage :
 				<div class="codestyle">
-					&nbsp;&nbsp;// Activate or desactivate debug mode<br/>
 					&nbsp;&nbsp;var blms_debug = true;<br/>
 				</div>
-				Note: Par défault la valeur du blms_debug est à false et le debogage désactivé
+				Note: Par défault, la valeur du blms_debug est à false et le débogage désactivé.
 			</p>
 			<p>
 				Pour positionner le badge sur la page d'accueil :
 				<div class="codestyle">
-					&nbsp;&nbsp;// Badge location on the website homepage<br />
 					&nbsp;&nbsp;var blms_badge_location = "bottomright";<br/>
 				</div>
 				Note: blms_badge_location peut prendre la valeur "topleft", "topright", "bottomleft" ou par défaut "bottomright"
@@ -194,8 +192,6 @@ Paix.
 			<p>
 				Forcer la page actuelle à s'afficher sans couleur (le tout doit être fait manuellement sur chaque page) :
 				<div class="codestyle">
-					&nbsp;&nbsp;// Makes the current page colorless during the iniatiative<br />
-					&nbsp;&nbsp;// (has to be set manually on each pages)<br/>
 					&nbsp;&nbsp;var blms_force = false;<br/>
 				</div>
 			</p>
@@ -203,13 +199,11 @@ Paix.
 			<p>
 				Spécifier toutes les pages et leur langue que vous souhaitez afficher sans couleur :
 				<div class="codestyle">
-					&lt;script&gt;<br/>
-					&nbsp;&nbsp;// Sets the URL and language in an object. Supported languages : fr, en.<br/>
+					&nbsp;&nbsp;// Langues supportées : fr, en.<br/>
 					&nbsp;&nbsp;var blms_pages = {'/' : 'en', '/fr/' : 'fr' };<br/>
-					&lt;/script&gt;<br/>
 				</div>
 
-				Note: The path (e.g. '/' has to be exactly as in the URL.)
+				Note: Le chemin (e.g. '/') doit être exactement ce qui se trouve dans l'URL.
 			</p>
 
 			<h4>Est-ce que ça fonctionne sur tous les sites web?</h4>
