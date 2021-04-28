@@ -156,29 +156,25 @@ Paix.
 			<h4>Avez-vous une extension pour WordPress?</h4>
 			<p>Bien sûr! Premièrement, <a href="/blms.zip" title="Extension WordPress de soutien à #BlackLivesMatter">téléchargez l'extension</a>.</p>
 			<p>Puis, à partir de votre tableau de bord WordPress, accédez aux menu <strong>Extensions &gt; Ajouter nouveau</strong>. Installez l'extension et activez-la!</p>
+			<p>Après l'activation, vous pouvez accéder à la page de configuration de l'extension:</p>
+			<p>Methode 1 : Dans le menu <strong>Extensions &gt; Extensions installées</strong>, cliquez sur le lien "Settings" (Réglages) tel qu'illustré :<br/>
+				<img src="../images/settingspagelink-1.jpg"/>
+			</p>
+			<p>Dans la page de configuration, vous pouvez :
+				<li>Activer ou désactiver le mode débogage avec l'option "Debug mode" (par défaut, le mode débogage désactivé)</li>
+				<li>Déterminer l'emplacement du badge sur la page d'accueil (par défaut, le badge est positionné "En bas à droite").</li>
+				<li>Inscrire le lien de vos pages d'accueil en anglais et en français.</li>
+				<li>Prévisualiser votre page d'accueil sans couleur</li>
+			</p>
+			<p>Une fois les modifications complétées, n'oubliez pas de sauvegarder vos changements!</p>
 
 			<h4>Comment puis-je valider que le code fonctionnera?</h4>
 			<p>Seulement à ajouter <code>?blms_simulation</code> à la fin de l'adresse de la page d'accueil de votre site dans votre navigateur et vous pourrez voir votre page d'accueil sans couleur!</p>
 
 			<h4>Est-ce possible d'avoir plus de contrôle sur l'intégration du mode sans couleur?</h4>
 			<p>Oui! Plusieurs options sont disponibles.</p>
-			<p>Si vous installer l'extension sur votre site WordPress, après l'avoir activé, accédez la page de configuration de l'extension. Pour cela, il existe deux (02) méthodes :</p>
-			<p>Methode 1 : Dans le menu <strong>Extensions &gt; Extensions installées</strong>, cliquez sur le lien "Settings"<br/>
-				<img src="../images/settingspagelink-1.jpg"/>
-			</p>
-			<p>Methode 2 : Dans le menu <strong>Réglages &gt; BLMS</strong><br/>
-				<img src="../images/settingspagelink-2.jpg"/>
-			</p>
-			<p>Dans la page de configuration, vous pouvez :
-				<li>Activer ou désactiver le mode débogage avec l'option "Debug mode" (par défaut, la valeur est à false et le mode débogage désactivé)</li>
-				<li>Positionner le badge sur la page d'accueil avec l'option "Badge location" (par défaut, la valeur est bottomright et le badge positionné "En bas à droite"</li>
-				<li>Renseigner le lien de vos pages d'accueil en anglais et en français avec respectivement les options "English homepage URL" et "French homepage URL"</li>
-				<li>Prévisualisez votre page d'accueil incolore en cliquant sur le lien "Preview your colorless homepage"</li>
-			</p>
-			<p>N'oubliez pas enfin de sauvegarder vos modifications en cliquant sur le bouton "Save changes"</p>
-			<p><img src="../images/settingspage.jpg"/></p>
 			
-			<p>Ou sinon, vous pouvez insérer les codes ci-dessous à l'intérieur d'une balise <code>&lt;script&gt; &lt;/script&gt;</code>. Placez ensuite l'ensemble juste avant le <a href="#blmsjsfile">code ci-dessus</a></p>
+			<p>Vous pouvez insérer les codes ci-dessous à l'intérieur d'une balise <code>&lt;script&gt; &lt;/script&gt;</code>. Placez ensuite l'ensemble juste avant le <a href="#blmsjsfile">code ci-dessus</a></p>
 			<p>
 				Pour activer le debogage :
 				<div class="codestyle">
@@ -193,7 +189,7 @@ Paix.
 					&nbsp;&nbsp;// Badge location on the website homepage<br />
 					&nbsp;&nbsp;var blms_badge_location = "bottomright";<br/>
 				</div>
-				Note: blms_badge_location peut prendre la valeur "topleft", "topright", "bottomleft" ou par defaut "bottomright"
+				Note: blms_badge_location peut prendre la valeur "topleft", "topright", "bottomleft" ou par défaut "bottomright"
 			</p>
 			<p>
 				Forcer la page actuelle à s'afficher sans couleur (le tout doit être fait manuellement sur chaque page) :
