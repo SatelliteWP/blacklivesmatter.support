@@ -106,8 +106,18 @@ function blms_badge() {
 	s.appendChild(i);
 
 	var p = document.createElement('div');
-	p.setAttribute('data-style', 'bottomright');
-	p.setAttribute('style', 'width: 85px; height: 85px; display: block; position: fixed; bottom: 200px; right: 0; box-shadow: gray 0px 0px 5px; border-radius: 5px 0 0 5px; overflow: hidden;z-index:99999; -moz-filter: none; -webkit-filter: none; filter: none;');
+	blms_badge_location=(typeof blms_badge_location==='undefined')?'bottomright':blms_badge_location;
+    p.setAttribute( 'data-style', blms_badge_location );
+    var badge_style = 'width: 85px; height: 85px; display: block; position: fixed; box-shadow: gray 0px 0px 5px; overflow: hidden;z-index:99999; -moz-filter: none; -webkit-filter: none; filter: none;';
+    if( blms_badge_location === 'topleft' ){
+        p.setAttribute( 'style', badge_style + ' top: 100px; left: 0; border-radius: 0 5px 5px 0;' );
+    }else if( blms_badge_location === 'topright' ){
+        p.setAttribute( 'style', badge_style + ' top: 100px; right: 0; border-radius: 5px 0 0 5px;' );
+    }else if( blms_badge_location === 'bottomright' ){
+        p.setAttribute( 'style', badge_style + ' bottom: 100px; right: 0; border-radius: 5px 0 0 5px;' );
+    }else{
+        p.setAttribute( 'style', badge_style + ' bottom: 100px; left: 0; border-radius: 0 5px 5px 0;' );
+    }
 	p.appendChild(s);
 
 	if (document.body != null) {
