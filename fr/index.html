@@ -121,14 +121,14 @@ Paix.
 			<h2>Comment puis-je faire partie de la solution?</h2>
 			<p>Voici ce que vous pouvez faire :</p>
 			<ol>
-				<li>Contactez une personne qui est affectée (directement ou non) par le racisme et demandez-lui de vous expliquer ses enjeux... et ne faites qu'écouter.</li>
+				<li>Contactez une personne qui est affectée (directement ou non) par le racisme et demandez-lui de vous expliquer ses enjeux.</li>
 				<li>Prenez le temps de <a href="https://fr.wikipedia.org/wiki/Black_Lives_Matter" title="Black Lives Matter" target="_blank">vous éduquer</a> à propos du mouvement #blacklivesmatter. Nous ne vous dirons pas quoi penser... on vous fait confiance. Voyez comment vous pourriez avoir un impact dans votre entreprise et votre environnement.</li>
 				<li>Du 23 au 25 mai, enlevez les couleurs de votre page d'accueil en utilisant le script ci-dessous afin de sensibiliser vos visiteurs à la situation actuelle. Voyez ci-dessous <a href="#code">comment le faire</a>.</li>
-				<li><a href="#share">Partagez ce site web</a> sur vos comptes de médias sociaux et notifiez d'autres proprios de sites web qui pourraient rendre leur page d'accueil sans couleur. Assurez-vous également de partager vos réflexions sur les actions concrètes que vous prendrez afin de faire partie de la solution.</li>
+				<li><a href="#share">Partagez ce site web</a> sur vos comptes de médias sociaux et notifiez d'autres propriétaires de sites web qui pourraient rendre leur page d'accueil sans couleur. Assurez-vous également de partager vos réflexions sur les actions concrètes que vous prendrez afin de faire partie de la solution.</li>
 			</ol>
 			<p>Vous n'avez pas la responsabilité de changer le monde par vous-même.</p>
 			<p>Mais demeurer un témoin silencieux n'est plus suffisant.</p>
-			<p>Devenez un agent de changement.</p>
+			<p>Devenez un ACTEUR de changement.</p>
 			<p>Impliquez-vous.</p>
 		</div>
 	</div>
@@ -140,6 +140,7 @@ Paix.
 		</div>
 	</div>
 	<div class="section code">
+		<a name="blmsjsfile"></a>
 		<div class="container">
 			<p>
 				C'est vraiment simple! Demandez à votre webmestre d'inclure le code suivant avant la balise de fermeture <code>&lt;/body&gt;</code> :
@@ -149,7 +150,7 @@ Paix.
 					&lt;script defer src=&quot;https://blacklivesmatter.support/js/blms.js&quot;&gt;&lt;/script&gt;
 				</div>
 			</p>
-			<p>Votre page d'accueil verra ses couleurs retirées seulement pour les 5 jours mentionnés.</p>
+			<p>Votre page d'accueil verra ses couleurs retirées seulement pour les trois (03) jours mentionnés.</p>
 			<p>Il n'y a rien d'autre à faire!</p>
 
 			<h4>Avez-vous une extension pour WordPress?</h4>
@@ -160,24 +161,46 @@ Paix.
 			<p>Seulement à ajouter <code>?blms_simulation</code> à la fin de l'adresse de la page d'accueil de votre site dans votre navigateur et vous pourrez voir votre page d'accueil sans couleur!</p>
 
 			<h4>Est-ce possible d'avoir plus de contrôle sur l'intégration du mode sans couleur?</h4>
-			<p>Oui! Plusieurs options sont disponibles. Vous pouvez :</p>
+			<p>Oui! Plusieurs options sont disponibles.</p>
+			<p>Si vous installer l'extension sur votre site WordPress, après l'avoir activé, accédez la page de configuration de l'extension. Pour cela, il existe deux (02) méthodes :</p>
+			<p>Methode 1 : Dans le menu <strong>Extensions &gt; Extensions installées</strong>, cliquez sur le lien "Settings"<br/>
+				<img src="../images/settingspagelink-1.jpg"/>
+			</p>
+			<p>Methode 2 : Dans le menu <strong>Réglages &gt; BLMS</strong><br/>
+				<img src="../images/settingspagelink-2.jpg"/>
+			</p>
+			<p>Dans la page de configuration, vous pouvez :
+				<li>Activer ou désactiver le mode débogage avec l'option "Debug mode" (par défaut, la valeur est à false et le mode débogage désactivé)</li>
+				<li>Positionner le badge sur la page d'accueil avec l'option "Badge location" (par défaut, la valeur est bottomright et le badge positionné "En bas à droite"</li>
+				<li>Renseigner le lien de vos pages d'accueil en anglais et en français avec respectivement les options "English homepage URL" et "French homepage URL"</li>
+				<li>Prévisualisez votre page d'accueil incolore en cliquant sur le lien "Preview your colorless homepage"</li>
+			</p>
+			<p>N'oubliez pas enfin de sauvegarder vos modifications en cliquant sur le bouton "Save changes"</p>
+			<p><img src="../images/settingspage.jpg"/></p>
+			
+			<p>Ou sinon, vous pouvez insérer les codes ci-dessous à l'intérieur d'une balise <code>&lt;script&gt; &lt;/script&gt;</code>. Placez ensuite l'ensemble juste avant le <a href="#blmsjsfile">code ci-dessus</a></p>
 			<p>
-				Activate debugging :
+				Pour activer le debogage :
 				<div class="codestyle">
-					&lt;script&gt;<br/>
-					&nbsp;&nbsp;// Activer le débogage<br/>
-					&nbsp;&nbsp;var blms_debug = false;<br/>
-					&lt;/script&gt;<br/>
+					&nbsp;&nbsp;// Activate or desactivate debug mode<br/>
+					&nbsp;&nbsp;var blms_debug = true;<br/>
 				</div>
+				Note: Par défault la valeur du blms_debug est à false et le debogage désactivé
+			</p>
+			<p>
+				Pour positionner le badge sur la page d'accueil :
+				<div class="codestyle">
+					&nbsp;&nbsp;// Badge location on the website homepage<br />
+					&nbsp;&nbsp;var blms_badge_location = "bottomright";<br/>
+				</div>
+				Note: blms_badge_location peut prendre la valeur "topleft", "topright", "bottomleft" ou par defaut "bottomright"
 			</p>
 			<p>
 				Forcer la page actuelle à s'afficher sans couleur (le tout doit être fait manuellement sur chaque page) :
 				<div class="codestyle">
-					&lt;script&gt;<br/>
 					&nbsp;&nbsp;// Makes the current page colorless during the iniatiative<br />
 					&nbsp;&nbsp;// (has to be set manually on each pages)<br/>
 					&nbsp;&nbsp;var blms_force = false;<br/>
-					&lt;/script&gt;<br/>
 				</div>
 			</p>
 
