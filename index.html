@@ -163,7 +163,7 @@ Peace.
 
 			<h4>How can I validate that the code will work?</h4>
 			<p>Simply add <code>?blms_simulation</code> at the end of your website URL in your browser and you should see your colorless homepage! If your setup is correct, you should see a colorless page!</p>
-			<p>After activation, you can access the settings page through <strong>Settings &gt; #BlackLivesMatter</strong> or <strong>Plugins &gt; Installed plugins/strong> and click on &quot;Settings&quot; as shown below:<br/>
+			<p>After activation, you can access the settings page through <strong>Settings &gt; #BlackLivesMatter</strong> or <strong>Plugins &gt; Installed plugins</strong> and click on &quot;Settings&quot; as shown below:<br/>
 				<img src="../images/settingspagelink-1.jpg"/>
 			</p>
 			<p>From the settings page, you can:
@@ -181,30 +181,24 @@ Peace.
 			<p>
 				Activate debugging :
 				<div class="codestyle">
-					&lt;script&gt;<br/>
 					&nbsp;&nbsp;// Activates debugging<br/>
 					&nbsp;&nbsp;var blms_debug = false;<br/>
-					&lt;/script&gt;<br/>
 				</div>
 			</p>
 			<p>
 				Force the current page to be colorless (this has to be done on each page) :
 				<div class="codestyle">
-					&lt;script&gt;<br/>
 					&nbsp;&nbsp;// Makes the current page colorless during the iniatiative<br />
 					&nbsp;&nbsp;// (has to be set manually on each pages)<br/>
 					&nbsp;&nbsp;var blms_force = false;<br/>
-					&lt;/script&gt;<br/>
 				</div>
 			</p>
 
 			<p>
 				Specify all pages and their language that you want to be colorless :
 				<div class="codestyle">
-					&lt;script&gt;<br/>
 					&nbsp;&nbsp;// Sets the URL and language in an object. Supported languages : fr, en.<br/>
 					&nbsp;&nbsp;var blms_pages = {'/' : 'en', '/fr/' : 'fr' };<br/>
-					&lt;/script&gt;<br/>
 				</div>
 
 				Note: The path (e.g. '/' has to be exactly as in the URL.)
